@@ -1,3 +1,14 @@
+class Playlist():
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self._programas = programas
+
+    def __getitem__(self, item):
+        return self._programas[item]
+
+    def __len__(self):
+        return len(self._programas)
+
 class Programa:
     def __init__(self, nome, ano):
         self._nome = nome.title()
@@ -27,7 +38,6 @@ class Filme(Programa):
         super().__init__(nome, ano)
         self.duracao = duracao
     
-
     def __str__(self):
         return f'Nome: {self.nome} - {self.duracao} min - Likes: {self.likes}'
 
@@ -47,7 +57,12 @@ class Playlist():
 
     def __getitem__(self, item):
         return self._programas[item]
+    
+    @property
+    def listagem(self):
+        return self._programas
 
+    @property
     def __len__(self):
         return len(self._programas)
 
@@ -59,7 +74,6 @@ demolidor = Serie('demolidor', 2016, 2)
 vingadores.dar_likes()
 vingadores.dar_likes()
 vingadores.dar_likes()
-
 atlanta.dar_likes()
 atlanta.dar_likes()
 tmep.dar_likes()
@@ -69,6 +83,8 @@ demolidor.dar_likes()
 
 listinha = [atlanta, vingadores, demolidor, tmep]
 minha_playlist = Playlist('fim de semana', listinha)
+
+print(minha_playlist[0])
 
 for programa in minha_playlist:
     print(programa)
