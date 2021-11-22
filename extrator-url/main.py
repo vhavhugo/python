@@ -2,9 +2,11 @@
 # texto = "abcde"
 
 # texto = texto[0:2]
-url = "https://bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&quantidade=100&moedaDestino=dolar"
+# url = "h ttps://bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&quantidade=100&moedaDestino=dolar"
+# url = ""
 # print(url)
-
+# if url == "":
+#     raise ValueError("A URL está vazia")
 # url_base = url[8:19]
 # print(url_base)
 
@@ -20,20 +22,26 @@ url = "https://bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&quantidad
 
 # Separa base e os parâmetros
 # url = "https://bytebank.com/cambio?moedaOrigem=real"
-indice_interrogacao = url.find('?')
-url_base = url[:indice_interrogacao]
-url_parametros = url[indice_interrogacao+1:]
-print(url_parametros)
+# indice_interrogacao = url.find('?')
+# url_base = url[:indice_interrogacao]
+# url_parametros = url[indice_interrogacao+1:]
+# print(url_parametros)
 
 # Busca o valor de um parãmetro
-parametro_busca = 'moedaDestino'
-indice_parametro = url_parametros.find(parametro_busca)
-indice_valor = indice_parametro + len(parametro_busca) + 1
-indice_e_comercial = url_parametros.find('&', indice_valor)
+# parametro_busca = 'moedaDestino'
+# indice_parametro = url_parametros.find(parametro_busca)
+# indice_valor = indice_parametro + len(parametro_busca) + 1
+# indice_e_comercial = url_parametros.find('&', indice_valor)
 
-if indice_e_comercial == -1:
-    valor = url_parametros[indice_valor:]
-else:
-    valor = url_parametros[indice_valor:indice_e_comercial]
+# if indice_e_comercial == -1:
+#     valor = url_parametros[indice_valor:]
+# else:
+#     valor = url_parametros[indice_valor:indice_e_comercial]
+# print(valor)
+
+url2 = "https://www.alura.com.br/curso?curso=python"
+
+indice_curso = url2.find("curso")
+indice_valor = indice_curso + len("curso") + 1
+valor = url2[indice_valor:]
 print(valor)
-
